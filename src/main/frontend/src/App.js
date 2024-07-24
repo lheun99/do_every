@@ -7,7 +7,7 @@ function App() {
     const [message, setMessage] = useState('');
 
     useEffect(() => {
-        axios.get('/api/hello')
+        axios.get('/api/test')
             .then(response => {
                 console.log(response.data); // 콘솔 로그로 응답 데이터 확인
                 setMessage(response.data);

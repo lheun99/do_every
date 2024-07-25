@@ -15,6 +15,7 @@ public class SetController {
         this.setService = setService;
     }
 
+    //TEST
     @GetMapping
     public String set() {
         return "Set is Readyy";

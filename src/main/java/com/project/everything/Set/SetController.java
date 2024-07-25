@@ -1,9 +1,7 @@
 package com.project.everything.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 @RequestMapping("/set")
@@ -22,8 +20,13 @@ public class SetController {
         return "Set is Readyy";
     }
 
+    //Create
+    @PostMapping("/save")
+    public SetEntity saveSet(@RequestBody SetEntity setEntity) throws Exception {
+        return setService.saveSet(setEntity);
+    }
     //Read
-    @GetMapping("/data")
+    @GetMapping("/list")
     public List<SetEntity> getSetList() throws Exception {
         return setService.getSetList();
     }
